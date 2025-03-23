@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
-import { DiAtom } from 'react-icons/di';
+import { IoHomeSharp } from 'react-icons/io5';
+//import MyClock from './02/MyClock';
+import MyDiv1 from './03/MyDiv1';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className="bg-slate-500">
-          Edit <code>src/App.js</code> and save to reload.
-          <DiAtom />
+    <div className="flex flex-col w-full h-screen mx-auto">
+      <header className="flex justify-between items-center text-xl font-bold h-20 p-10 bg-slate-200">
+        <p>리액트 기초</p>
+        <p>
+          <IoHomeSharp />
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <main className="grow w-full flex justify-center items-center overflow-y-auto">
+        <MyDiv1 />
+      </main>{' '}
+      {/*grow는 헤더와 푸터 남은 영역 잡는 거 */}
+      <footer className="flex justify-center items-center h-20 bg-black text-slate-100">
+        ⓒ Kim Hyo Bin
+      </footer>
     </div>
   );
 }
