@@ -12,7 +12,7 @@ function MyList() {
       content={item.content}
     />
   ));
-  return <div className="w-full grid grid-cols-2 gap-4">{tags}</div>;
+  return <div className="w-10/12 grid grid-cols-2 gap-4">{tags}</div>;
 }
 
 export default MyList;

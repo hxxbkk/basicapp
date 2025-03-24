@@ -1,7 +1,11 @@
+import { useState } from 'react';
+
 function MyListItem({ title, imgUrl, content }) {
-  let cnt = 0;
+  //let cnt = 0;
+  const [cnt, setCnt] = useState(0);
   const handleClick = () => {
-    cnt = cnt + 1;
+    //cnt = cnt + 1;
+    setCnt(cnt + 1);
     console.log('cnt=', cnt);
   };
   return (
@@ -15,7 +19,9 @@ function MyListItem({ title, imgUrl, content }) {
         </div>
         <p>{content}</p>
         <div className="flex justify-end items-center">
-          <span onClick={handleClick}>❤️</span>
+          <span onClick={handleClick} className="cursor-pointer">
+            ❤️
+          </span>
           <span className="inline-flex mx-2 font-bold">좋아요</span>
           <span className="font-bold text-xl">{cnt}</span>
         </div>
