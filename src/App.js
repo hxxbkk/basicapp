@@ -1,10 +1,11 @@
 //import logo from './logo.svg';
 import './App.css';
 import { IoHomeSharp } from 'react-icons/io5';
-import MyClock from './02/MyClock';
+//import MyClock from './02/MyClock';
 // import MyDiv1 from './03/MyDiv1';
 //import MyList from './04/MyList';
-import Lotto from './05/Lotto';
+//import Lotto from './05/Lotto';
+import Traffic from './06/Traffic';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         {/* <MyDiv1 /> */}
         {/* <MyList /> */}
         {/* <Lotto /> */}
-        <MyClock />
+        {/* <MyClock /> */}
+        <Traffic/>
       </main>
       {/*grow는 헤더와 푸터 남은 영역 잡는 거 */}
       <footer className="flex justify-center items-center h-20 bg-black text-slate-100">
