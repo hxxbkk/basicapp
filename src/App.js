@@ -5,7 +5,8 @@ import { IoHomeSharp } from 'react-icons/io5';
 // import MyDiv1 from './03/MyDiv1';
 //import MyList from './04/MyList';
 //import Lotto from './05/Lotto';
-import Traffic from './06/Traffic';
+//import Traffic from './06/Traffic';
+import MyRef from './07/MyRef';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         {/* <MyList /> */}
         {/* <Lotto /> */}
         {/* <MyClock /> */}
-        <Traffic/>
+        {/* <Traffic/> */}
+        <MyRef />
       </main>
       {/*grow는 헤더와 푸터 남은 영역 잡는 거 */}
       <footer className="flex justify-center items-center h-20 bg-black text-slate-100">
