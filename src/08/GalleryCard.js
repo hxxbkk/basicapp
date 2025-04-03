@@ -1,18 +1,4 @@
-export default function GalleryCard() {
-  const item = {
-    galContentId: '2586952',
-    galContentTypeId: '17',
-    galTitle: '서울빛초롱축제',
-    galWebImageUrl: 'https://picsum.photos/id/237/200/300',
-    galCreatedtime: '20190109152342',
-    galModifiedtime: '20190109152354',
-    galPhotographyMonth: '201811',
-    galPhotographyLocation: '서울특별시 종로구',
-    galPhotographer: '라이브스튜디오',
-    galSearchKeyword:
-      '서울빛초롱축제, 서울특별시 종로구, 2018 하반기 기획사진, 청계천 야경, 서울 등 축제, 서울 축제',
-  };
-
+export default function GalleryCard({ item }) {
   let sptags = item.galSearchKeyword.includes(',')
     ? item.galSearchKeyword.split(',')
     : [item.galSearchKeyword];
