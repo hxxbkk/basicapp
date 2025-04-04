@@ -8,6 +8,7 @@ import { IoHomeSharp } from 'react-icons/io5';
 //import Traffic from './06/Traffic';
 //import MyRef from './07/MyRef';
 // import MyRefAdd from './07/MyRefAdd';
+import RouteMain from './09/RouteMain';
 import Gallery from './08/Gallery';
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <IoHomeSharp />
         </p>
       </header>
-      <main className="grow w-full flex justify-center items-center overflow-y-auto">
+      <main className="grow w-full flex justify-center items-start overflow-y-auto">
         {/* <MyDiv1 /> */}
         {/* <MyList /> */}
         {/* <Lotto /> */}
@@ -26,7 +27,8 @@ function App() {
         {/* <Traffic/> */}
         {/* <MyRef /> */}
         {/* <MyRefAdd /> */}
-        <Gallery />
+        {/* <Gallery /> */}
+        <RouteMain />
       </main>
       {/*grow는 헤더와 푸터 남은 영역 잡는 거 */}
       <footer className="flex justify-center items-center h-20 bg-black text-slate-100">
