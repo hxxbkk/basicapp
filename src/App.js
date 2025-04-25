@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 import './App.css';
-import { IoHomeSharp } from 'react-icons/io5';
+//import { IoHomeSharp } from 'react-icons/io5';
 import MyClock from './02/MyClock';
 // import MyDiv1 from './03/MyDiv1';
 //import MyList from './04/MyList';
@@ -8,11 +8,14 @@ import Lotto from './05/Lotto';
 import Traffic from './06/Traffic';
 //import MyRef from './07/MyRef';
 import MyRefAdd from './07/MyRefAdd';
-import RouteMain from './09/RouteMain';
+//import RouteMain from './09/RouteMain';
 import Gallery from './08/Gallery';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { RiHomeHeartFill } from 'react-icons/ri';
+//import { FaHome } from 'react-icons/fa';
+import RecoilMain from './10/RecoilMain';
+import Rest from './11/Rest';
+
 function App() {
   return (
     <BrowserRouter>
@@ -36,12 +39,17 @@ function App() {
             <li className="mx-2 p-2 rounded-md hover:bg-white hover:text-blue-600">
               <Link to="/gallery">관광</Link>
             </li>
+            <li className="mx-2 p-2 rounded-md hover:bg-white hover:text-blue-600">
+              <Link to="/recoil">Recoil예제</Link>
+            </li>
+            <li className="mx-2 p-2 rounded-md hover:bg-white hover:text-blue-600">
+              <Link to="/rest">JSON CRUD예제</Link>
+            </li>
           </ul>
-          <p>
-            <Link to="/">
-              <RiHomeHeartFill />
-            </Link>
-          </p>
+
+          {/* <Link to="/">
+            <FaHome />
+          </Link> */}
         </header>
         <main className="grow w-full flex justify-center items-start overflow-y-auto">
           <Routes>
@@ -50,6 +58,8 @@ function App() {
             <Route path="/traffic" element={<Traffic />} />
             <Route path="/add" element={<MyRefAdd />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/recoil" element={<RecoilMain />} />
+            <Route path="/rest" element={<Rest />} />
           </Routes>
         </main>
         {/*grow는 헤더와 푸터 남은 영역 잡는 거 */}
