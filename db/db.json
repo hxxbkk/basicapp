@@ -1,14 +1,19 @@
 {
   "posts": [
     {
-      "id": "7a37",
-      "title": "test1",
-      "auth": "testa1"
+      "id": "013e",
+      "title": "부산역 기차 타기 ",
+      "author": "김경민"
     },
     {
-      "id": "20f6",
-      "title": "test2",
-      "author": "testa2"
+      "id": "ded7",
+      "title": "태종대 관광 점심",
+      "author": "오소영"
+    },
+    {
+      "id": "595c",
+      "title": "광안리 구경 저녁",
+      "author": "이윤아"
     }
   ],
   "comments": [

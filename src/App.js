@@ -50,6 +50,7 @@ function App() {
           {/* <Link to="/">
             <FaHome />
           </Link> */}
+          <Link to="/">🏠</Link>
         </header>
         <main className="grow w-full flex justify-center items-start overflow-y-auto">
           <Routes>

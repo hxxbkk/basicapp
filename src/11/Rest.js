@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 export default function Rest() {
   const [tdata, setTdata] = useState([]);
   const [tags, setTags] = useState([]);
+  const [isUpdate, setIsUpdate] = useState(false);
+  const [isUpdateId, setIsUpdateId] = useState();
 
   const txt1Ref = useRef();
   const txt2Ref = useRef();
@@ -49,6 +51,51 @@ export default function Rest() {
     txt2Ref.current.value = '';
   };
 
+  const jsonDelete = async (id) => {
+    await fetch(`${url}/${id}`, {
+      method: 'DELETE',
+    });
+
+    setTdata(tdata.filter((item) => item.id !== id));
+  };
+
+  const handleUpdate = (item) => {
+    txt1Ref.current.value = item.title;
+    txt2Ref.current.value = item.author;
+
+    setIsUpdate(true);
+    setIsUpdateId(item.id);
+  };
+
+  const jsonPut = async () => {
+    const putData = {
+      id: isUpdateId,
+      title: txt1Ref.current.value,
+      author: txt2Ref.current.value,
+    };
+
+    const resp = await fetch(`${url}/${isUpdateId}`, {
+      method: 'PUt',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(putData),
+    });
+
+    const data = await resp.json();
+    setTdata(tdata.map((item) => (item.id === isUpdateId ? data : item)));
+
+    txt1Ref.current.value = '';
+    txt1Ref.current.focus();
+    txt2Ref.current.value = '';
+
+    setIsUpdate(false);
+    setIsUpdateId('');
+  };
+
+  const handleOk = () => {
+    if (isUpdate) jsonPut();
+    else jsonPost();
+  };
+
   useEffect(() => {
     getFetchData();
   }, []);
@@ -60,11 +107,19 @@ export default function Rest() {
       <tr key={item.id} className="h-10 border-b">
         <td className="text-center">{item.title}</td>
         <td className="text-center">{item.author}</td>
-        <td>
-          <TailButton caption="삭제" bcolor="orange" handleClick="" />
+        <td className="text-center">
+          <TailButton
+            caption="삭제"
+            bcolor="orange"
+            handleClick={() => jsonDelete(item.id)}
+          />
         </td>
-        <td>
-          <TailButton caption="수정" bcolor="lime" handleClick="" />
+        <td className="text-center">
+          <TailButton
+            caption="수정"
+            bcolor="lime"
+            handleClick={() => handleUpdate(item)}
+          />
         </td>
       </tr>
     ));
@@ -95,7 +150,11 @@ export default function Rest() {
             ref={txt2Ref}
           />
         </div>
-        <TailButton caption="입력" bcolor="blue" handleClick={jsonPost} />
+        <TailButton
+          caption={isUpdate ? '수정' : '입력'}
+          bcolor="blue"
+          handleClick={handleOk}
+        />
       </div>
       <table className="w-11/12 text-left text-sm font-light text-surface">
         <thead className="border-b border-neutral-200 font-medium">
