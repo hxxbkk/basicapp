@@ -79,7 +79,7 @@ export default function Rest() {
     };
 
     // const resp = await fetch(`${url}/${isUpdateId}`, {
-    //   method: 'PUt',
+    //   method: 'PUT',
     //   headers: { 'Content-Type': 'application/json' },
     //   body: JSON.stringify(putData),
     // });
