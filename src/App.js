@@ -14,7 +14,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 //import { FaHome } from 'react-icons/fa';
 import RecoilMain from './10/RecoilMain';
-import Rest from './11/Rest';
+import Rest from './12/Rest';
 
 function App() {
   return (
